@@ -1,4 +1,3 @@
 # Main Page
 
-
-* [SLAE](/SLAE/Main.md)
+  * [SLAE](/SLAE/Main.md)
