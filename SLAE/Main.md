@@ -7,9 +7,7 @@ This page contains the links to each of the assignments required for completing 
 *  [Assignment 4 - Custom Encoder](/SLAE/Assignment_4/Docs/Assignment_4.html)
 *  [Assignment 5 - Analyzing Metasploit Payloads](/SLAE/Assignment_5/Docs/Assignment_5.html)
 *  [Assignment 6 - Creating Polymorphic versions of shellcode samples](/SLAE/Assignment_6/Docs/Assignment_6.html)
-
-
-
+*  [Assignment 7 - Creating a Custom Crypter](/SLAE/Assignment_7/Docs/Assignment_7.html)
 
 ---
 
