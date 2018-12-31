@@ -247,6 +247,14 @@ The following Python parser will do the job, and the syntax for executing it is:
 
 ````
 #!/usr/bin/python
+
+"""
+ Filename:   reverse_tcp_shell_shellcoder.py
+ Author:     Samuel Dugo
+ SLAE-ID:    SLAE-1376
+ Purpose:    Assignment #2 of SLAE certification. This code will configure the IP and Port for a reverse tcp shellcode.
+"""
+
 import binascii
 import re
 import socket
