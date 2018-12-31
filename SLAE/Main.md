@@ -5,6 +5,7 @@ This page contains the links to each of the assignments required for completing 
 *  [Assignment 2 - Shellcode for a Reverse TCP Shell](/SLAE/Assignment_2/Docs/Assignment_2.html)
 *  [Assignment 3 - Egg Hunter Shellcode](/SLAE/Assignment_3/Docs/Assignment_3.html)
 *  [Assignment 4 - Custom Encoder](/SLAE/Assignment_4/Docs/Assignment_4.html)
+*  [Assignment 5 - Analyzing Metasploit Payloads](/SLAE/Assignment_5/Docs/Assignment_5.html)
 
 
 
