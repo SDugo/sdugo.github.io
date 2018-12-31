@@ -177,11 +177,12 @@ The pointer to a *sockaddr* structure is a bit complex. Basically, in the *man* 
 * INTERNET ADDRESS = 0 --> INADDR_ANY
 
     * ![](../Images/14_slae_assignment_1.png) 
-    ``man 7 ip``
+    
+        ``man 7 ip``
     
     * ![](../Images/15_slae_assignment_1.png) 
     
-    ``/usr/include/linux/in.h``
+        ``/usr/include/linux/in.h``
 
 The way to provide a structure of variables is by *feeding* the stack with these variables and then saving *ESP* on a register.
 
