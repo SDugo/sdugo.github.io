@@ -41,6 +41,7 @@ int main()
 Analyzing the main function of this code on a disassembler like GDB, is possible to identify the call to the socket function.
 
 ![](../Images/01_slae_assignment_1.png)
+
 ``Previous code disassembled``
 
 But, what are these instructions for? And why there is a call to *socket*? 
