@@ -113,6 +113,7 @@ int 0x80                ;executes the call
 ``Assembly code for connecting the socket to a remote address``
 
 In order to test the execution of the program until this part, it is necessary to start a listener on port 8888: **nc -nv -l 8888**. Furthermore, to test this part of code without using the wrapper provided later on this article, is necessary to comment those lines that contain the word *decoder*. Otherwise the function will return an error, which will be stored on *EAX*.
+
 ![](../Images/03_slae_assignment_2.png)
 
 ``Debugging the connection of the socket to a remote address``
@@ -370,6 +371,7 @@ echo '[+] Done!'
 ``compile_shellcode.sh``
 
 Now the shellcode can be tested.
+
 ![](../Images/06_slae_assignment_2.png)
 
 ``Shellcode execution``
