@@ -4,7 +4,7 @@
  Filename:   two_complement_encoder.py
  Author:     Samuel Dugo
  SLAE-ID:    SLAE-1376
- Purpose:    Assignment #5 of SLAE certification. This code will encode a given shellcode using the two's complement method.
+ Purpose:    Assignment #4 of SLAE certification. This code will encode a given shellcode using the two's complement method.
 """
 
 import random
