@@ -44,6 +44,7 @@ There are two main parts that need to be known to generate an *egg hunter*:
 A tag on an *egg hunter* shellcode is a 4 bytes unique hexadecimal string that acts as key, and will be used by the *egg hunter* to identify the start of the malicious shellcode.
 
 To convert an ASCII string (**4 bytes**) to hexadecimal, is possible to use the command: **echo -n TAG_TO_CREATE|hexdump -C| head -n1 | cut -d' ' -f3-6 | sed -e 's/ /\\x/g' | sed 's/^/\\x/g'**
+
 ![](../Images/01_slae_assignment_3.png)
 
 ``Parsing a string to hexadecimal``
@@ -57,6 +58,7 @@ Every operating system has its own syscalls, but the most important aspects to c
 2. Usually, the syscall should take the less arguments possible to minimize the shellcode size and simplify the writing process
 
 For Linux 32-bits systems a good choice is the function *chdir(const char \*path)*.
+
 ![](../Images/02_slae_assignment_3.png)
 
 ``sys_chdir structure``
