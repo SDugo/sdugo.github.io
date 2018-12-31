@@ -53,6 +53,7 @@ The socket function allows any program to create an endpoint for communication a
 3. int protocol
 
 ![](../Images/02_slae_assignment_1.png)
+
 ``man socket``
 
 ### *int domain*
@@ -62,11 +63,13 @@ This variable must contain the protocol family used for the communication. In th
 Reading the documentation found on *socket.h*  is possible to identify that the value of **AF_INET** is **2**.
 
 ![](../Images/03_slae_assignment_1.png)
+
 `/usr/src/linux-headers-3.2.0-126/include/linux/socket.h`
 
 Which would explain the following `mov` instruction on the debugger.
 
 ![](../Images/04_slae_assignment_1.png)
+
 ``mov instruction to configure the socket for AF_INET address family`` 
 
 ### *int type*
@@ -76,11 +79,13 @@ The *type* variable specifies the semmantic used for the communication. As in th
 Reading the documentation found on *socket.h* is possible to identify that the value of **SOCK_STREAM** is **1**.
 
 ![](../Images/05_slae_assignment_1.png)
-`/usr/include/i386-linux-gnu/bits/socket.h`
+
+``/usr/include/i386-linux-gnu/bits/socket.h``
 
 Which would explain the following `mov` instruction on the debugger.
 
 ![](../Images/06_slae_assignment_1.png)
+
 ``mov instruction to configure the socket for using TCP semmantic``
 
 ### *int protocol*
@@ -88,11 +93,13 @@ Which would explain the following `mov` instruction on the debugger.
 As socket's *man* page specifies, this variable is usually **0**. The reason for this value is that normally one socket is used to communicate using just one protocol, hence this value must be set to **0**.
 
 ![](../Images/07_slae_assignment_1.png)
+
 ``man socket``
 
 Which would explain the following `mov` instruction on the debugger.
 
 ![](../Images/08_slae_assignment_1.png)
+
 ``mov instruction to configure the socket for using just one protocol``
 
 After the arguments for creating a socket have been declared, it is necessary to know how to call the function that creates a socket, which is *sys_socketcall*.
@@ -103,6 +110,7 @@ There is a [place](http://www.skyfree.org/linux/kernel_network/socket.html) that
 2. A list of arguments, which in this case are the options for creating the socket (*AF_INET,SOCK_STREAM,0*)
 
 ![](../Images/09_slae_assignment_1.png)
+
 ``sys_socketcall structure``
 
 This way, the assembly code for this part of the bind TCP shell would be:
@@ -129,6 +137,7 @@ mov edi,eax             ;stores the file descriptor (fd) on edi
 Debugging the execution of this code is possible to determine the file descriptor assigned to the current socket.
 
 ![](../Images/10_slae_assignment_1.png)
+
 ``Debugging the file descriptor associated to the socket``
 
 ## Binding the socket to a local port
@@ -136,11 +145,13 @@ Debugging the execution of this code is possible to determine the file descripto
 To bind the socket created to an specific port, there is an option on the *net.h* file that refers to a *bind()* function. The protocol number for **SYS_BIND** on *sys_socketcall* is **2**.
 
 ![](../Images/11_slae_assignment_1.png)
+
 ``/usr/include/linux/net.h``
 
 As *sys_socketcall* receives two parameters (call & args), the *man* page for *bind* contains the information needed to figure out what should be loaded on *ECX* as arguments.
 
 ![](../Images/12_slae_assignment_1.png)
+
 ``man bind``
 
 The three arguments needed are the following:
@@ -158,15 +169,19 @@ This argument is already controlled and can be satisified with no issue, so ther
 The pointer to a *sockaddr* structure is a bit complex. Basically, in the *man* page for *ip* is possible to gather the information needed to satisfy this parameter.
 
 ![](../Images/13_slae_assignment_1.png)
+
 ``man 7 ip``
 
 * AF_INET = 2
 * PORT = 0x22B8 --> 8888 (will be set as a label on data section to easy the configuration)
 * INTERNET ADDRESS = 0 --> INADDR_ANY
 
-    * ![](../Images/14_slae_assignment_1.png) ``man 7 ip``
+    * ![](../Images/14_slae_assignment_1.png) 
+    ``man 7 ip``
     
-    * ![](../Images/15_slae_assignment_1.png)``/usr/include/linux/in.h``
+    * ![](../Images/15_slae_assignment_1.png) 
+    
+    ``/usr/include/linux/in.h``
 
 The way to provide a structure of variables is by *feeding* the stack with these variables and then saving *ESP* on a register.
 
@@ -175,6 +190,7 @@ The way to provide a structure of variables is by *feeding* the stack with these
 For IPv4 addresses, the address length will be always 16 bytes because an IPv4 address is composed by 4 fields of 4 bytes each one (4 fields x 4 bytes = 16 bytes).
 
 ![](../Images/16_slae_assignment_1.png)
+
 ``/usr/include/linux/in.h``
 
 Using this information, it is possible to generate the assembly code to bind the socket to an specific port.
@@ -204,12 +220,14 @@ Next step will be to listen for incoming connections, using *call* *4*.
 
 ![](../Images/17_slae_assignment_1.png)
 
+``/usr/include/linux/net.h``
 
 The *man* page for *listen* specifies the structure of the call *listen(int sockfd, int backlog)*.
 
 As *sockfd* is already stored on *EDI*, the only question left is: what value should be assigned to the *backlog* variable?
 
 ![](../Images/18_slae_assignment_1.png)
+
 ``man listen``
 
 Searching for *backlog* and *sockets* on the Internet is possible to [identify](http://pubs.opengroup.org/onlinepubs/009695399/functions/listen.html) that a value of 0 may allow the socket to accept connections using a minimum queue value.
@@ -223,13 +241,17 @@ mov ecx,esp             ;loads the arguments on ecx
 mov al,0x66             ;defines syscall as sys_socketcall(number,args)
 int 0x80
 ````
+
 ``Assembly code for a socket to start listening for incoming connections``
 
 Using *GDB* and adding a breakpoint after this syscall, is possible to check that the TCP socket is created and listening on port 8888.
 
 ![](../Images/19_slae_assignment_1.png)
+
 ``Debugging listening syscall``
+
 ![](../Images/20_slae_assignment_1.png)
+
 ``Veryfing that the socket is listening on the specified port``
 
 ## Accepting an incoming connection
@@ -237,6 +259,7 @@ Using *GDB* and adding a breakpoint after this syscall, is possible to check tha
 The syscall number to accept an incoming connection is *5* for *SYS_ACCEPT*. The *man* page for *accept* states that it is necessary to pass a structure.
 
 ![](../Images/21_slae_assignment_1.png)
+
 ``man 2 accept``
 
 However, it is possible to set *addr and *addrlen to NULL.
@@ -260,14 +283,17 @@ int 0x80
 
 After executing the code the application hangs until there is an incoming connection.
 ![](../Images/22_slae_assignment_1.png)
+
 ``Debugging the accept function``
 
 Port 8888 is open and listening.
 ![](../Images/23_slae_assignment_1.png)
+
 ``State of active connections on server side``
 
 When an incoming connection occurs, the application will continue its execution.
 ![](../Images/24_slae_assignment_1.png)
+
 ``The program accepts an incoming connection``
 
 ## Redirecting STDIN, STDOUT and STDERR to a newly created socket from a client
@@ -277,6 +303,7 @@ Although now is possible to hook the connection to a port, it is necessary to re
 Basically, *dup2()* will clone a file descriptor, and both file descriptors will point to the same entry in the *global file table*. This table is like a registry for keeping note of the files opened by each process to ensure that if two processes execute *open()* on the same file, they will both read this file at their own pace. So, when a process executes *dup2()* to duplicate a file descriptor, its cloned file descriptor will access the same file opened by the original file descriptor, and both file descriptors will *collaborate* into interacting with a file.
 
 ![](../Images/25_slae_assignment_1.png)
+
 ``man dup``
 
 Pankaj Pal explains this functionality in depth [here](http://edusagar.com/articles/view/25/IO-redirection-using-dup-system-call).
@@ -287,6 +314,7 @@ Then, *dup2()* needs the following parameters:
 * newfd: which will be pointed to each stream (stdin/stdout/stderr)
 
 ![](../Images/26_slae_assignment_1.png)
+
 ``sys_dup2 structure``
 
 The code for this section is as follows:
@@ -316,6 +344,7 @@ The arguments needed by this function are the following:
 * envp[]
 
 ![](../Images/27_slae_assignment_1.png)
+
 ``man execve``
 
 However, as it is possible to set *argv[]* and *envp[]* to *NULL* without loosing the capability of running a shell, this article just explains how to configure the **filename* argument.
@@ -476,6 +505,7 @@ echo '[+] Done!'
 
 Now the shellcode can be tested.
 ![](../Images/28_slae_assignment_1.png)
+
 ``Shellcode execution``
 
 ---
