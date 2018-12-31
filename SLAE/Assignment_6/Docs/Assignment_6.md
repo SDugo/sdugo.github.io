@@ -15,7 +15,7 @@ The three selected shellcodes for this exercise are the following:
 
 ## shellcode-593
 
-* *Original shellcode:* http://shell-storm.org/shellcode/files/shellcode-593.php
+* *Original shellcode:* [http://shell-storm.org/shellcode/files/shellcode-593.php](http://shell-storm.org/shellcode/files/shellcode-593.php)
 * *Functionality:* Changes the access value of /etc/shadow file to 0777
 * *Original size:* 29 bytes
 * *Final size:* 42 bytes (144%)
@@ -86,7 +86,7 @@ After that, it is possible to execute the shellcode and verify that */etc/shadow
 
 ## shellcode-825
 
-* *Original shellcode:* http://shell-storm.org/shellcode/files/shellcode-825.php
+* *Original shellcode:* [http://shell-storm.org/shellcode/files/shellcode-825.php](http://shell-storm.org/shellcode/files/shellcode-825.php)
 * *Functionality:* Flushes iptables on Linux x86
 * *Original size:* 43 bytes
 * *Final size:* 56 bytes (130%)
@@ -170,7 +170,7 @@ After that, it is possible to execute the shellcode and verify that the firewall
 
 ## shellcode-672
 
-* *Original shellcode:* http://shell-storm.org/shellcode/files/shellcode-672.php
+* *Original shellcode:* [http://shell-storm.org/shellcode/files/shellcode-672.php](http://shell-storm.org/shellcode/files/shellcode-672.php)
 * *Functionality:* Binds a shell on port 64533
 * *Original size:* 97 bytes
 * *Final size:* 97 bytes (0%)
