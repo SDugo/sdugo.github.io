@@ -31,4 +31,4 @@ As a constructive critic, I have to say that I expected an email when the exam s
 Another thing that you need to know is that you will be provided with access to a machine with no tools on it, so be prepared with a VM that has all the tools which you think that you will need so you don’t have to lose time downloading the tools. Probably, they don’t tell you this because you should be expected to have your arsenal at hand, but I think the whole point of the exam is not evaluating if you are able to download tools from the Internet.
 
 ## Final Words
-I enjoyed taking both the course and the exam. I was willing to take a course like this one, but I was not in a moment for a "*learn on your own and suffer while learning*" kind of course. So I have to thank [Nikhil](https://twitter.com/nikhil_mitt) for such a guided course on this topic ;)
+I enjoyed taking both the course and the exam. I was willing to take a course like this one, but I was not in a moment for a "*learn on your own and suffer while learning*" kind of course. So I have to thank [Nikhil](https://twitter.com/nikhil_mitt) for such a guided course on this topic ;) :wink:
