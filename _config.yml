@@ -1,3 +1,5 @@
 theme: jekyll-theme-cayman
 title: The Sink In The Wardrobe
 show_downloads: false
+gems:
+  - jekyll-redirect-from

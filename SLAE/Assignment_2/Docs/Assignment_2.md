@@ -1,3 +1,7 @@
+---
+redirect_to: 'https://thesinkinthewardrobe.com/slae-assignment-02/'
+---
+
 # Assignment #2 - Shellcode for a Reverse TCP Shell 
 
 **Exercise description:** Creating shellcode for running a TCP reverse shell. The solution must allow to configure both the connection port and the IP easily, and the shellcode must execute a shell on a successful connection.

@@ -1,3 +1,7 @@
+---
+redirect_to: 'https://thesinkinthewardrobe.com/slae-assignment-05/'
+---
+
 # Assignment #5 - Analyzing Metasploit Payloads 
 
 **Exercise description:** Analyzing at least three shellcode samples generated using Metasploit for Linux/x86. Making use of GDB/Ndisasm/Libemu to dissect the functionality of the shellcodes analyzed.

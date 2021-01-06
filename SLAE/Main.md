@@ -1,3 +1,6 @@
+---
+redirect_to: 'https://thesinkinthewardrobe.com'
+---
 
 This page contains the links to each of the assignments required for completing the requirements of the SecurityTube Linux Assembly Expert certification:
 

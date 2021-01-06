@@ -1,3 +1,7 @@
+---
+redirect_to: 'https://thesinkinthewardrobe.com/crtp-review/'
+---
+
 # CRTP - An excellent guide to attack/defend an Active Directory
 ## Background
 To understand my opinion about this course you need to know something about me. As a professional, I am a pentester who loves automation (among other things). As a student, I am a holder of multiple certifications but the more interesting ones are: *OSCP, OSCE & CRTP*.

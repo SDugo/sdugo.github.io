@@ -1,3 +1,7 @@
+---
+redirect_to: 'https://thesinkinthewardrobe.com/slae-assignment-03/'
+---
+
 # Assignment #3 - Egg Hunter Shellcode 
 
 **Exercise description:** Creating a working demo of the *egg hunting* technique. The *egg hunter* must allow to execute different payloads.

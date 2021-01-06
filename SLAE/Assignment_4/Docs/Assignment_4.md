@@ -1,3 +1,7 @@
+---
+redirect_to: 'https://thesinkinthewardrobe.com/slae-assignment-04/'
+---
+
 # Assignment #4 - Custom Encoder 
 
 **Exercise description:** Creating a custom encoding scheme similar to the *insertion encoder* technique. The PoC should make use of *execve-stack* as the shellcode to encode with the proposed schema.

@@ -1,3 +1,6 @@
+---
+redirect_to: 'https://thesinkinthewardrobe.com/slae-assignment-01/'
+---
 # Assignment #1 - Shellcode for a Bind TCP Shell 
 
 **Exercise description:** Creating shellcode for running a TCP bind shell. The solution must allow to configure the binding port number easily, and the shellcode must execute a shell on an incoming connection.

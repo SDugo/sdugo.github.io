@@ -1,3 +1,7 @@
+---
+redirect_to: 'https://thesinkinthewardrobe.com/slae-assignment-07/'
+---
+
 # Assignment #7 - Creating a Custom Crypter
 
 **Exercise description:** Generating a custom crypter, being possible to use any existing schema or create a new one for this exercise. Any programming language is allowed to perform this exercise.

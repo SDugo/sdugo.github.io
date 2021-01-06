@@ -1,3 +1,7 @@
+---
+redirect_to: 'https://thesinkinthewardrobe.com/slae-assignment-06/'
+---
+
 # Assignment #6 - Creating Polymorphic Versions of Shellcode Samples  
 
 **Exercise description:** Generating a polymorphic version of three shellcodes stored on [Shell-Storm](http://shell-storm.org/shellcode/). The polymorphic versions cannot be larger than 150% of the existing shellcode.
