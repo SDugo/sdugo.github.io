@@ -1,3 +1,6 @@
+---
+redirect_to: 'https://thesinkinthewardrobe.com'
+---
 
 # Main
 
